@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="424.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.Game.Controller">
-
+<AnchorPane prefHeight="424.0" prefWidth="623.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.Game.Controller">
+   <children>
+      <Pane fx:id="gamePane" layoutX="9.0" layoutY="58.0" prefHeight="307.0" prefWidth="605.0" />
+      <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="567.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/images.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="519.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/41366544-restart-icon-internet-button-on-white-background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="192.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/8-grunge-x-brush-stroke-9.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="42.0" layoutX="411.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/images%20(1).png" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>
