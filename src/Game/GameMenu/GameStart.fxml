@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="623.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.GameMenu.Controller">
+   <children>
+      <Button fx:id="onePlayer" layoutX="333.0" layoutY="104.0" mnemonicParsing="false" onAction="#onePlayerClicked" onMouseEntered="#onePlayerEnter" onMouseExited="#onePlayerExit" prefHeight="65.0" prefWidth="132.0" style="-fx-background-color: MediumSeaGreen;" text="One Player">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="100.0" fitWidth="121.0" layoutX="180.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/one%20player.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="twoPlayers" layoutX="333.0" layoutY="247.0" mnemonicParsing="false" onAction="#twoPlayersClicked" onMouseEntered="#twoPlayerEnter" onMouseExited="#twoPlayerExit" prefHeight="65.0" prefWidth="132.0" style="-fx-background-color: MediumSeaGreen;" text="Two players">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="100.0" fitWidth="121.0" layoutX="180.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/two%20player.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="57.0" fitWidth="106.0" layoutX="560.0" layoutY="6.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/depositphotos_86720720-stock-illustration-exit-icon-vector-illustration.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</Pane>
