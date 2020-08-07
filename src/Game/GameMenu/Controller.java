@@ -1,5 +1,6 @@
 package Game.GameMenu;
 
+import Game.GameController;
 import Game.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,10 @@ public class Controller {
     public Button onePlayer;
     public Pane pane;
 
-    public void twoPlayersClicked(ActionEvent actionEvent) {
+    public void twoPlayersClicked(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/Game/Game/Game.fxml"));
+        Main.stage.setScene(new Scene(root));
+        new GameController("two players", null);
     }
 
     public void onePlayerClicked(ActionEvent actionEvent) throws IOException {

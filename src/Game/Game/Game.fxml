@@ -1,30 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="424.0" prefWidth="623.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.Game.Controller">
    <children>
       <Pane fx:id="gamePane" layoutX="9.0" layoutY="58.0" prefHeight="307.0" prefWidth="605.0" />
-      <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="567.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="567.0" layoutY="18.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Resources/images.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
-      <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="519.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="519.0" layoutY="19.0" onMouseClicked="#restartClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Resources/41366544-restart-icon-internet-button-on-white-background.jpg" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
-      <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="192.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="turnImage" fitHeight="36.0" fitWidth="32.0" layoutX="250.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Resources/8-grunge-x-brush-stroke-9.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="38.0" fitWidth="42.0" layoutX="411.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Resources/images%20(1).png" />
-         </image>
-      </ImageView>
+      <Label fx:id="text1" layoutX="198.0" layoutY="375.0" prefHeight="36.0" prefWidth="37.0" text="It's">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="text2" layoutX="297.0" layoutY="375.0" text="turn to play!">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Separator layoutX="35.0" layoutY="367.0" prefHeight="16.0" prefWidth="553.0" />
    </children>
 </AnchorPane>

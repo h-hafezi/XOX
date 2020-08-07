@@ -63,7 +63,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Label layoutX="217.0" layoutY="21.0" prefHeight="36.0" prefWidth="190.0" text="Select Difficulty" textFill="#03078c">
+      <Label layoutX="235.0" layoutY="21.0" prefHeight="36.0" prefWidth="190.0" text="Select Difficulty" textFill="#03078c">
          <font>
             <Font name="System Bold Italic" size="25.0" />
          </font>

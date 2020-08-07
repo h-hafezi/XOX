@@ -3,21 +3,22 @@ package Game;
 public class GameController {
     private GameType gameType;
     private Difficulty difficulty;
+    private String turn = "x";
+    public static GameController gameController;
 
     public GameController(String type, String difficulty) {
         if (type.equals("one player")) {
             setGameType(GameType.ONE_PLAYER);
-            if (difficulty.equals("easy")) {
-                setDifficulty(Difficulty.EASY);
-            } else if (difficulty.equals("hard")) {
-                setDifficulty(Difficulty.HARD);
-            } else {
-                setDifficulty(Difficulty.INSANE);
+            for (Difficulty dif : Difficulty.values()) {
+                if (gameType.toString().equalsIgnoreCase(difficulty)) {
+                    setDifficulty(dif);
+                }
             }
         }
         if (type.equals("two players")) {
             setGameType(GameType.TWO_PLAYERS);
         }
+        gameController = this;
     }
 
     public void setGameType(GameType gameType) {
@@ -34,6 +35,22 @@ public class GameController {
 
     public Difficulty getDifficulty() {
         return difficulty;
+    }
+
+    public void reset() {
+        gameController.turn = "x";
+    }
+
+    public boolean is_x_turn() {
+        return turn.equals("x");
+    }
+
+    public boolean is_o_turn() {
+        return turn.equals("o");
+    }
+
+    public void change_turn() {
+        turn = turn.equalsIgnoreCase("x") ? "o" : "x";
     }
 
 }
