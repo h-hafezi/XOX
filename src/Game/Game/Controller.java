@@ -22,6 +22,8 @@ public class Controller {
     static Controller controller;
     public Label text1;
     public Label text2;
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     public void initialize() throws IOException {
         gamePane.getChildren().clear();
@@ -69,6 +71,14 @@ public class Controller {
         restartClicked(mouseEvent);
         Parent root = FXMLLoader.load(getClass().getResource("/Game/GameMenu/GameStart.fxml"));
         Main.stage.setScene(new Scene(root));
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+        root.setOnMouseDragged(event -> {
+            Main.stage.setX(event.getScreenX() - xOffset);
+            Main.stage.setY(event.getScreenY() - yOffset);
+        });
     }
 
     public static void resetImages() throws FileNotFoundException {

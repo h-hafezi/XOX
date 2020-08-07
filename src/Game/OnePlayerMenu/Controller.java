@@ -16,6 +16,8 @@ public class Controller {
     public Button easyButton;
     public Button hardButton;
     public Button insaneButton;
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     public void easyClicked(ActionEvent actionEvent) {
         // game page
@@ -65,6 +67,14 @@ public class Controller {
     public void backClicked() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/Game/GameMenu/GameStart.fxml"));
         Main.stage.setScene(new Scene(root));
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+        root.setOnMouseDragged(event -> {
+            Main.stage.setX(event.getScreenX() - xOffset);
+            Main.stage.setY(event.getScreenY() - yOffset);
+        });
     }
 
 }

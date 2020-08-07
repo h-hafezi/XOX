@@ -18,16 +18,34 @@ public class Controller {
     public Button twoPlayers;
     public Button onePlayer;
     public Pane pane;
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     public void twoPlayersClicked() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/Game/Game/Game.fxml"));
         Main.stage.setScene(new Scene(root));
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+        root.setOnMouseDragged(event -> {
+            Main.stage.setX(event.getScreenX() - xOffset);
+            Main.stage.setY(event.getScreenY() - yOffset);
+        });
         new GameController("two players", null);
     }
 
     public void onePlayerClicked() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/Game/OnePlayerMenu/OnePlayerMenu.fxml"));
         Main.stage.setScene(new Scene(root));
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+        root.setOnMouseDragged(event -> {
+            Main.stage.setX(event.getScreenX() - xOffset);
+            Main.stage.setY(event.getScreenY() - yOffset);
+        });
     }
 
     public void exit() {
