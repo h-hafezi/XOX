@@ -37,9 +37,7 @@ public class GameController {
         return difficulty;
     }
 
-    public void reset() {
-        gameController.turn = "x";
-    }
+    // methods about turn, getting it and changing it
 
     public boolean is_x_turn() {
         return turn.equals("x");
@@ -52,5 +50,12 @@ public class GameController {
     public void change_turn() {
         turn = turn.equalsIgnoreCase("x") ? "o" : "x";
     }
+
+    // the only thing we actually reset is just the turn and others will remain the same
+
+    public void reset() {
+        gameController.turn = "x";
+    }
+
 
 }

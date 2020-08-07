@@ -29,31 +29,31 @@ public class Controller {
         //game page
     }
 
-    public void easyEnter(MouseEvent mouseEvent) {
+    public void easyEnter() {
         easyButton.setStyle("-fx-background-color: Navy; ");
     }
 
-    public void easyExit(MouseEvent mouseEvent) {
+    public void easyExit() {
         easyButton.setStyle("-fx-background-color: royalblue; ");
     }
 
-    public void hardEnter(MouseEvent mouseEvent) {
+    public void hardEnter() {
         hardButton.setStyle("-fx-background-color: Navy; ");
     }
 
-    public void hardExit(MouseEvent mouseEvent) {
+    public void hardExit() {
         hardButton.setStyle("-fx-background-color: royalblue; ");
     }
 
-    public void insaneEntered(MouseEvent mouseEvent) {
+    public void insaneEntered() {
         insaneButton.setStyle("-fx-background-color: Navy; ");
     }
 
-    public void insaneExit(MouseEvent mouseEvent) {
+    public void insaneExit() {
         insaneButton.setStyle("-fx-background-color: royalblue; ");
     }
 
-    public void exitClicked(MouseEvent mouseEvent) {
+    public void exitClicked() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are You Sure You Want To Exit", ButtonType.YES, ButtonType.NO);
         alert.setTitle("exit alert");
         alert.showAndWait();
@@ -62,7 +62,7 @@ public class Controller {
         }
     }
 
-    public void backClicked(MouseEvent mouseEvent) throws IOException {
+    public void backClicked() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/Game/GameMenu/GameStart.fxml"));
         Main.stage.setScene(new Scene(root));
     }

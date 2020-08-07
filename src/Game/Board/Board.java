@@ -3,7 +3,6 @@ package Game.Board;
 import java.util.HashMap;
 
 public class Board {
-    public static Board board = new Board();
     private HashMap<Integer, Integer> tiles = new HashMap<>();
 
     public Board() {
@@ -36,10 +35,6 @@ public class Board {
 
     public void putO(int i) {
         tiles.put(i, -1);
-    }
-
-    public static void resetBoard() {
-        Board.board = new Board();
     }
 
     public boolean win() {
@@ -111,8 +106,6 @@ public class Board {
         return (x3 == 1 && x5 == 1 && x7 == 1) || (x3 == -1 && x5 == -1 && x7 == -1);
     }
 
-    public void reset() {
-        board = new Board();
-    }
+
 
 }

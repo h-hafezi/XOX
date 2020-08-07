@@ -29,15 +29,6 @@ public class GamePane {
     public static Board board = new Board();
     static GamePane gamePane;
 
-    private Image get_white_image() {
-        try {
-            return new Image(new FileInputStream("src/Resources/images.jpg"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     private static Image get_image_x() {
         try {
             return new Image(new FileInputStream("src/Resources/8-grunge-x-brush-stroke-9.png"));
@@ -104,9 +95,8 @@ public class GamePane {
         return GameController.gameController.is_o_turn();
     }
 
-    public void clicked1(MouseEvent mouseEvent) {
+    public void clicked1() {
         if (board.isTileFull(1)) {
-            System.out.println("it's full");
             return;
         }
         if (is_o_turn()) {
@@ -123,7 +113,7 @@ public class GamePane {
         checkWin();
     }
 
-    public void clicked2(MouseEvent mouseEvent) {
+    public void clicked2() {
         if (board.isTileFull(2)) {
             return;
         }
@@ -141,7 +131,7 @@ public class GamePane {
         checkWin();
     }
 
-    public void clicked3(MouseEvent mouseEvent) {
+    public void clicked3() {
         if (board.isTileFull(3)) {
             return;
         }
@@ -159,7 +149,7 @@ public class GamePane {
         checkWin();
     }
 
-    public void clicked4(MouseEvent mouseEvent) {
+    public void clicked4() {
         if (board.isTileFull(4)) {
             return;
         }
@@ -177,7 +167,7 @@ public class GamePane {
         checkWin();
     }
 
-    public void clicked5(MouseEvent mouseEvent) {
+    public void clicked5() {
         if (board.isTileFull(5)) {
             return;
         }
@@ -195,7 +185,7 @@ public class GamePane {
         checkWin();
     }
 
-    public void clicked6(MouseEvent mouseEvent) {
+    public void clicked6() {
         if (board.isTileFull(6)) {
             return;
         }
@@ -213,7 +203,7 @@ public class GamePane {
         checkWin();
     }
 
-    public void clicked7(MouseEvent mouseEvent) {
+    public void clicked7() {
         if (board.isTileFull(7)) {
             return;
         }
@@ -231,7 +221,7 @@ public class GamePane {
         checkWin();
     }
 
-    public void clicked8(MouseEvent mouseEvent) {
+    public void clicked8() {
         if (board.isTileFull(8)) {
             return;
         }
@@ -249,7 +239,7 @@ public class GamePane {
         checkWin();
     }
 
-    public void clicked9(MouseEvent mouseEvent) {
+    public void clicked9() {
         if (board.isTileFull(9)) {
             return;
         }
@@ -270,6 +260,8 @@ public class GamePane {
     public static void updateTurnImage() {
         Controller.controller.updateTurnImage();
     }
+
+    // it checks both win and draw
 
     public void checkWin() {
         if (board.win()) {
@@ -301,6 +293,8 @@ public class GamePane {
         }
     }
 
+    // changes to winning gif
+
     public void setMediaForWinning() {
         new Thread(() -> {
             String path = "src/Resources/mp4 (2).mp4";
@@ -311,6 +305,8 @@ public class GamePane {
             mediaPlayer.setOnEndOfMedia(() -> mediaPlayer.seek(Duration.ZERO));
         }).start();
     }
+
+    // changes to draw gif
 
     public void setMediaForEqual(){
         new Thread(() -> {

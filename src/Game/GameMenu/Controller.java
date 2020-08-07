@@ -19,18 +19,18 @@ public class Controller {
     public Button onePlayer;
     public Pane pane;
 
-    public void twoPlayersClicked(ActionEvent actionEvent) throws IOException {
+    public void twoPlayersClicked() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/Game/Game/Game.fxml"));
         Main.stage.setScene(new Scene(root));
         new GameController("two players", null);
     }
 
-    public void onePlayerClicked(ActionEvent actionEvent) throws IOException {
+    public void onePlayerClicked() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/Game/OnePlayerMenu/OnePlayerMenu.fxml"));
         Main.stage.setScene(new Scene(root));
     }
 
-    public void exit(MouseEvent mouseEvent) {
+    public void exit() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are You Sure You Want To Exit", ButtonType.YES, ButtonType.NO);
         alert.setTitle("exit alert");
         alert.showAndWait();
@@ -39,19 +39,19 @@ public class Controller {
         }
     }
 
-    public void twoPlayerEnter(MouseEvent mouseEvent) {
+    public void twoPlayerEnter() {
         twoPlayers.setStyle("-fx-background-color: ForestGreen; ");
     }
 
-    public void twoPlayerExit(MouseEvent mouseEvent) {
+    public void twoPlayerExit() {
         twoPlayers.setStyle("-fx-background-color: MediumSeaGreen; ");
     }
 
-    public void onePlayerEnter(MouseEvent mouseEvent) {
+    public void onePlayerEnter() {
         onePlayer.setStyle("-fx-background-color: ForestGreen; ");
     }
 
-    public void onePlayerExit(MouseEvent mouseEvent) {
+    public void onePlayerExit() {
         onePlayer.setStyle("-fx-background-color: MediumSeaGreen; ");
     }
 
