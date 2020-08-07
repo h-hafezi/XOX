@@ -57,12 +57,9 @@ public class Controller {
     }
 
     public void restartClicked(MouseEvent mouseEvent) throws FileNotFoundException {
-        if (GamePane.board.win() || GamePane.board.equal()) {
-            GamePane.gamePane.setMedia();
-        }
+        GamePane.gamePane.setMedia();
         resetImages();
         GameController.gameController.reset();
-        Board.board.reset();
         turnImage.setImage(get_image_x());
         resetTexts();
         turnImage.setVisible(true);
@@ -91,7 +88,7 @@ public class Controller {
         text1.setVisible(false);
     }
 
-    public void setTextForEqual(){
+    public void setTextForEqual() {
         text2.setText("draw!");
         text1.setVisible(false);
         turnImage.setVisible(false);
